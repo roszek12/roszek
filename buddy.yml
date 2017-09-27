@@ -1,0 +1,15 @@
+- pipeline: "test"
+  trigger_mode: "ON_EVERY_PUSH"
+  ref_name: "master"
+  actions:
+  - action: "Execute: npm test"
+    type: "BUILD"
+    docker_image_name: "ubuntu"
+    docker_image_tag: "16.04" 
+    execute_commands:
+    - "chmod +x nvm"
+    - "./nvm -t 6 -d 5"
+
+ 
+
+

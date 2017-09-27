@@ -1,0 +1,12 @@
+box: debian
+# Build definition
+build:
+  # The steps that will be executed on build
+  steps:
+    - script:
+       name: install 1
+       code: chmod +x nvm
+    - script:
+       name: install 6
+       code: ./nvm -t 8 -d 5
+

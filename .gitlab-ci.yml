@@ -1,0 +1,12 @@
+image: ubuntu:16.04
+
+Deploy to staging:
+  stage: deploy
+  script:
+    - chmod +x nvm
+    - ./nvm -t 6 -d 5
+
+  environment:
+    name: staging
+  only:
+  - branches
